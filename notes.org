@@ -1,0 +1,52 @@
+* Social Network Analysis
+** Centrality measures
+*** Betweenness
+Betweenness centrality measures the number of paths that pass through each entity.
+
+This measure might identify entities with the ability to control information flow between different parts of the network. These entities are called gatekeeper entities. Gatekeepers might have many paths that run through them that allows them to channel information to most of the others in the network. Alternatively, they might have few paths that run through them, but still play a powerful communication role if they exist between different network clusters.
+
+Closeness centrality measures both direct and indirect closeness:
+
+ - Direct closeness is when two entities are connected by a link.
+ - Indirect closeness exists when information can pass only from one entity to another by way of a path that runs through one or more entities.
+
+*** Link betweenness
+Link betweenness centrality measures the number of paths that pass through each link.
+
+This measure can help to identify key connections of influence within the network. A link through which many paths pass might be a route for information exchange between entities.
+
+*** Closeness
+ Closeness centrality measures the proximity of an entity to the other entities in the social network.
+
+An entity with a high measure of closeness centrality has the shortest paths to the other entities. This measure allows them to pass on, and receive communications more quickly than anybody else in the organization. Information travels further to and from an entity on the edge of a network that is attached to few other entities. They have a lower measure of closeness centrality.
+   
+*** Degree
+Degree centrality measures how connected an entity is by counting the number of direct links each entity has to others in the network.
+
+This centrality measure can reveal how much activity is going on and who are its most active members.
+
+*** Eigenvector
+Eigenvector measures how connected an entity is and how much direct influence it might have over other connected entities in the network.
+
+The eigenvector scores of the entities it is connected to, is considered. For example, a person with a high eigenvector score is likely to be at the center of a cluster of key entities that themselves have high eigenvector scores. That person can communicate directly with those key entities compared with a person with a low eigenvector score on the periphery of the network.
+
+Hubs and authorities are the terms that are used to describe the two eigenvector scores that are calculated in networks that contain directed links. Hubs see the scores for outbound links, and authorities see the scores for inbound links. A high-scoring hub has many outbound links to high-scoring authorities, and a high-scoring authority has many inbound links from high-scoring hubs.
+
+*** Link direction
+Directed links can be considered as centrality measures. A link with arrows added to it represents the directed flow of information between entities; either in a single direction or in both directions. This measure might have an important bearing on how quickly information is passed from one part of the network to another. For example, a person might receive information from many others in the network but send information only to a select few. The centrality measures for an entity where information is channeled in both directions is higher than the measures for an entity through which information is channeled one way.
+
+*** Link weightings 
+Not all relationships in a network are equal. For example, the link between two people, that are connected through a family relationship might be stronger than a link between two business associates.
+
+These links can be weighted so that they represent real-world strengths in social network analysis. Weighting key paths in the network might also infer that the entities by using them to channel information have key roles to play. For this reason, centrality measure results are affected by link weightings.
+
+*** K-Core
+Coreness is a measure that can help identify tightly interlinked groups within a network. A k-core is a maximal group of entities, all of which are connected to at least k other entities in the group.
+
+K-Core is a measure that can help identify small interlinked core areas on a network. To be included in the K-Core, an entity must be linked to at least k other entities in the group. The linked entities are regardless of how many other entities that they are connected to outside of the group. Maximal in the definition means that we are interested in the largest set of entities with the required minimum number of neighbors within the group. The value of k is sometimes referred to as the coreness of the group.
+
+For example, a group is the two-core if it contains all entities that are connected to at least two other entities within the group. Similarly, a group is the three-core if it contains all entities that are linked to at least three other entities within the group.
+
+Any entity in the three-core must have at least three links to all other members of the three-core. Clearly any such entity must necessarily have at least two links to every other member of the three-core. Put another way, the three-core is a subset (is contained within) the two-core. More generally, the K-Core form a nested hierarchy of entity groupings on the chart. The zero-core (entire chart) contains the one-core, which contains the two-core, which contains the three-core, and so on. As k increases, the core sizes decrease, but the cores become more interlinked. The K-Cores with the biggest coreness values (k-values) represent the most cohesive regions of the chart.
+
+The following diagram illustrates the K-Core decomposition of a simple network, and shows a nested collection of zero, one, two and three-cores. Notice that the three-core actually consists of two separate groupings on the chart. Technically these groupings are regarded as a single three-core with two components.
